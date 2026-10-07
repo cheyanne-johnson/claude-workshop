@@ -1,0 +1,9 @@
+{
+  "name": "ai-workshop-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Claude Workshop for Maxed Out Founders — website + waitlist backend",
+  "dependencies": {
+    "@vercel/kv": "^2.0.0"
+  }
+}

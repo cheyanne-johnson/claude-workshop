@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Waitlist — Claude Workshop for Maxed Out Founders</title>
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Breathing';src:url('Breathing.ttf') format('truetype');font-display:swap}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:#1f2421;font-family:'Raleway',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:200;background:#1f2421;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;box-shadow:0 2px 14px rgba(0,0,0,0.3)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:0.88rem;letter-spacing:0.2em;text-transform:uppercase;color:#dcdffe;cursor:pointer;transition:color 0.2s;border:none;background:none;text-decoration:none}
+.nav-logo:hover{color:#e63946}
+.wl-back{font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(220,223,254,0.7);text-decoration:none;transition:color 0.2s}
+.wl-back:hover{color:#dcdffe}
+
+/* layout */
+.inner{max-width:780px;margin:0 auto;padding:0 2.5rem}
+.section{padding:4.5rem 0;position:relative;overflow:hidden}
+.bg-lilac{background:#dcdffe}
+.bg-white{background:#fff}
+.bg-dark{background:#1f2421}
+.bg-cream{background:#f8f8ff}
+
+/* type */
+h1.hero{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:3.4rem;color:#1f2421;line-height:1.05;letter-spacing:-0.01em;margin-bottom:0.6rem}
+.s-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.1rem;color:#1f2421;margin-bottom:0.6rem}
+.s-title-w{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.1rem;color:white;margin-bottom:0.6rem}
+.script{font-family:'Breathing',cursive;font-size:2.4rem;color:#8f99fb;display:block;line-height:1.5;margin-bottom:0.35rem}
+.eye{font-family:'Raleway',sans-serif;font-size:0.67rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#8f99fb;display:block;margin-bottom:1.75rem}
+.eye-w{font-family:'Raleway',sans-serif;font-size:0.67rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.7);display:block;margin-bottom:1rem}
+.bc{font-family:'Raleway',sans-serif;font-size:0.9rem;line-height:1.9;color:#333}
+.bc-w{font-family:'Raleway',sans-serif;font-size:0.9rem;line-height:1.9;color:rgba(255,255,255,0.9)}
+.wl-events{list-style:none;text-align:left;max-width:460px;margin:0 auto;display:inline-block}
+.wl-events li{font-family:'Raleway',sans-serif;font-size:0.87rem;line-height:1.6;color:#333;padding:0.4rem 0 0.4rem 1.3rem;position:relative}
+.wl-events li::before{content:'✦';position:absolute;left:0;color:#8f99fb;font-size:0.75rem;top:0.55rem}
+.wl-events strong{color:#1f2421}
+
+/* stickers + washi (decorative system) */
+.stk-float{position:absolute;pointer-events:none;z-index:10}
+.stk-r-5{transform:rotate(-5deg)}
+.stk-r8{transform:rotate(8deg)}
+.washi{position:absolute;left:-20px;right:-20px;height:16px;border-radius:1px;z-index:5}
+.washi-mint{background:rgba(219,255,219,0.72)}
+.washi-lilac{background:rgba(220,223,254,0.85)}
+.washi-top{top:-2px;transform:rotate(-0.8deg)}
+.washi-bottom{bottom:-2px;transform:rotate(0.6deg)}
+
+/* waitlist form */
+.wl-card{background:#fff;border-radius:10px;padding:2.5rem;box-shadow:0 10px 34px rgba(31,36,33,0.1);max-width:480px;margin:0 auto;position:relative;z-index:20}
+.wl-field{margin-bottom:1.3rem}
+.wl-label{display:block;font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1f2421;margin-bottom:0.45rem}
+.wl-input{width:100%;font-family:'Raleway',sans-serif;font-size:0.95rem;color:#1f2421;background:#f8f8ff;border:1.5px solid #dcdffe;border-radius:6px;padding:0.75rem 1rem;transition:border-color 0.2s}
+.wl-input:focus{outline:none;border-color:#8f99fb}
+.wl-check-group{display:flex;flex-direction:column;gap:0.7rem;background:#f8f8ff;border:1.5px solid #dcdffe;border-radius:6px;padding:1rem 1.1rem}
+.wl-check-row{display:flex;align-items:flex-start;gap:0.65rem}
+.wl-check-row input[type=checkbox]{margin-top:0.2rem;width:16px;height:16px;accent-color:#8f99fb;flex-shrink:0;cursor:pointer}
+.wl-check-row label{font-family:'Raleway',sans-serif;font-size:0.86rem;font-weight:600;line-height:1.5;color:#1f2421;cursor:pointer}
+.wl-consent{display:flex;align-items:flex-start;gap:0.7rem;margin:1.5rem 0 1.6rem}
+.wl-consent input[type=checkbox]{margin-top:0.3rem;width:16px;height:16px;accent-color:#8f99fb;flex-shrink:0;cursor:pointer}
+.wl-consent label{font-family:'Raleway',sans-serif;font-size:0.78rem;line-height:1.65;color:#444;cursor:pointer}
+.wl-consent a{color:#8f99fb;text-decoration:underline}
+.wl-btn{width:100%;background:#8f99fb;color:#fff;border:none;font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.95rem 1.5rem;border-radius:6px;cursor:pointer;transition:background 0.2s}
+.wl-btn:hover{background:#1f2421}
+.wl-btn:disabled{opacity:0.55;cursor:not-allowed}
+.wl-error{font-family:'Raleway',sans-serif;font-size:0.78rem;color:#e63946;margin-bottom:1rem;display:none}
+.wl-success{text-align:center;padding:1.5rem 0}
+.wl-success .script{margin:0 auto 0.5rem}
+
+/* host bios */
+.bio-row{display:grid;grid-template-columns:270px 1fr;gap:3.25rem;align-items:center;margin-bottom:4rem}
+.bio-row:last-child{margin-bottom:0}
+.bio-row.rev{grid-template-columns:1fr 270px}
+.bio-row.rev .bio-photo{order:2}
+.bio-row.rev .bio-text{order:1}
+.bio-photo{position:relative;transform:rotate(-2deg)}
+.bio-row.rev .bio-photo{transform:rotate(2deg)}
+.bio-photo img{width:100%;display:block;border-radius:2px;box-shadow:6px 9px 24px rgba(0,0,0,0.4)}
+.bio-clip{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:32px;z-index:6}
+.bio-tag{display:inline-block;background:#8f99fb;color:#1f2421;font-family:'Raleway',sans-serif;font-size:0.64rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;margin-bottom:1rem}
+.bio-name{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.6rem;color:#fff;margin-bottom:0.9rem}
+.bio-text p{font-family:'Raleway',sans-serif;font-size:0.9rem;line-height:1.85;color:rgba(255,255,255,0.82);margin-bottom:1rem}
+.bio-text em{color:#8f99fb;font-style:italic}
+.bio-link{display:inline-block;margin-top:0.2rem;font-family:'Raleway',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8f99fb;text-decoration:none;border-bottom:1px solid rgba(143,153,251,0.5)}
+.bio-link:hover{color:#dcdffe;border-color:#dcdffe}
+
+@media(max-width:640px){
+  .inner{padding:0 1.25rem}
+  h1.hero{font-size:2.4rem}
+  .nav{padding:0 1rem}
+  .section{padding:3rem 0}
+  .stk-float{display:none}
+  .wl-card{padding:1.8rem}
+  .bio-row,.bio-row.rev{grid-template-columns:1fr;gap:1.5rem}
+  .bio-row.rev .bio-photo{order:1}
+  .bio-row.rev .bio-text{order:2}
+  .bio-photo{max-width:220px;margin:0 auto}
+  .bio-clip{display:none}
+  .bio-name{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html">AI Workshop · Paris</a>
+  <div style="display:flex;align-items:center;gap:1.5rem">
+    <a class="wl-back" href="privacy.html">Privacy Policy</a>
+    <a class="wl-back" href="index.html">← Back to site</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="section bg-white">
+  <div class="stk-float stk-r-5" style="width:82px;top:2.2rem;right:2.5rem"><img src="7.png" style="width:100%;display:block"></div>
+  <div class="stk-float stk-r8" style="width:70px;bottom:1.5rem;left:2rem"><img src="6.png" style="width:100%;display:block"></div>
+  <div class="inner" style="text-align:center;max-width:600px">
+    <span class="script">you're early —</span>
+    <h1 class="hero">Join the waitlist</h1>
+    <span class="eye" style="margin-bottom:1.25rem">Paris · dates to be announced</span>
+    <p class="bc" style="max-width:480px;margin:0 auto 1.5rem">We are bringing back the sold-out Claude Workshop and adding some more ways to kickstart your AI journey! Sign up to find out when dates are announced.</p>
+    <ul class="wl-events">
+      <li><strong>Claude Workshop for Maxed Out Founders</strong> — full-day, beginner-friendly, set up your Claude systems.</li>
+      <li><strong>Claude &amp; Notion Workshop</strong> — full-day, level up your Notion + Claude setup.</li>
+      <li><strong>AI Coworking</strong> — 3 hours of dedicated build time, with space to collaborate and ask questions.</li>
+    </ul>
+    <p class="bc" style="max-width:480px;margin:1.25rem auto 0;font-style:italic">Workshops will be co-hosted with <a href="https://wellinfrance.com" target="_blank" rel="noreferrer" style="color:#8f99fb">Well in France</a>.</p>
+  </div>
+</section>
+
+<div style="position:relative">
+  <div class="washi washi-lilac washi-top"></div>
+</div>
+
+<!-- FORM -->
+<section class="section bg-lilac" id="waitlist-form-section">
+  <div class="inner">
+    <div class="wl-card">
+
+      <div id="wl-form-wrap">
+        <div class="wl-error" id="wl-error"></div>
+        <form id="wl-form" novalidate>
+          <div class="wl-field">
+            <label class="wl-label" for="wl-name">Name</label>
+            <input class="wl-input" type="text" id="wl-name" name="name" autocomplete="name" required maxlength="120">
+          </div>
+          <div class="wl-field">
+            <label class="wl-label" for="wl-email">Email</label>
+            <input class="wl-input" type="email" id="wl-email" name="email" autocomplete="email" required maxlength="200">
+          </div>
+
+          <div class="wl-field">
+            <label class="wl-label">What are you interested in?</label>
+            <div class="wl-check-group">
+              <div class="wl-check-row">
+                <input type="checkbox" id="wl-int-workshop" name="interests" value="workshop">
+                <label for="wl-int-workshop">Claude Workshop for Maxed Out Founders</label>
+              </div>
+              <div class="wl-check-row">
+                <input type="checkbox" id="wl-int-notion" name="interests" value="notion">
+                <label for="wl-int-notion">Claude &amp; Notion Workshop</label>
+              </div>
+              <div class="wl-check-row">
+                <input type="checkbox" id="wl-int-coworking" name="interests" value="coworking">
+                <label for="wl-int-coworking">AI Coworking</label>
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" id="wl-source" name="source" value="direct">
+          <input type="text" id="wl-hp" name="company" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+
+          <div class="wl-consent">
+            <input type="checkbox" id="wl-consent" name="consent" required>
+            <label for="wl-consent">Keep me in the loop about these events &amp; add me to Cheyanne's email list. No spam, ever.</label>
+          </div>
+
+          <button class="wl-btn" type="submit" id="wl-submit">Join the waitlist</button>
+        </form>
+      </div>
+
+      <div id="wl-success" class="wl-success" style="display:none">
+        <span class="script">you're on the list —</span>
+        <h3 class="s-title" style="font-size:1.5rem">Thanks, we'll be in touch</h3>
+        <p class="bc">Keep an eye on your inbox — you'll hear from us as soon as the next date is set.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<section class="section bg-dark">
+  <div class="inner">
+    <span class="script" style="font-size:1.8rem">your hosts</span>
+    <h2 class="s-title-w" style="margin-bottom:2.75rem">The People in the Room</h2>
+
+    <div class="bio-row">
+      <div class="bio-photo">
+        <svg class="bio-clip" viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="11" r="8" fill="none" stroke="#b8935a" stroke-width="3.5"/>
+          <rect x="16.5" y="9" width="7" height="16" rx="2.5" fill="#b8935a"/>
+        </svg>
+        <img src="Cheyanne Branding_Taylor Prinsen_192.jpg" alt="Cheyanne Johnson">
+        <div class="stk-float" style="width:64px;top:-1rem;right:-1.25rem"><img src="1.png" style="width:100%;display:block"></div>
+        <div class="stk-float stk-r8" style="width:44px;bottom:-0.75rem;right:-0.75rem"><img src="2.png" style="width:100%;display:block"></div>
+      </div>
+      <div class="bio-text">
+        <span class="bio-tag">CJ Consulting</span>
+        <h3 class="bio-name">Cheyanne</h3>
+        <p>A <em>strategic operations expert</em>, an American in Paris, and mom of two. I've spent 15 years in strategy &amp; product, including at AWS, scaling global tech programs from <em>$0 to billions</em>.</p>
+        <p>I hit the kind of bone-deep burnout that makes you rethink everything. <em>So I left.</em> Now, I bring that same operational expertise to visionary entrepreneurs who are ready to <em>grow without the grind</em>.</p>
+        <a class="bio-link" href="https://cheyannejohnson.com/" target="_blank" rel="noreferrer">cheyannejohnson.com</a>
+      </div>
+    </div>
+
+    <div class="bio-row rev">
+      <div class="bio-photo">
+        <svg class="bio-clip" viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="11" r="8" fill="none" stroke="#b8935a" stroke-width="3.5"/>
+          <rect x="16.5" y="9" width="7" height="16" rx="2.5" fill="#b8935a"/>
+        </svg>
+        <img src="Dom+Founder+Well+in+France.webp" alt="Dom — Well in France">
+        <svg class="stk-float" style="width:58px;top:-1rem;right:-1rem" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#8f99fb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M40 12c-3.5-3.5-8.5-3-10.5 1.5-2 4.5 1.5 9 10.5 15.5 9-6.5 12.5-11 10.5-15.5-2-4.5-7-5-10.5-1.5z"/>
+          <path d="M18 30c-2.5-2.5-6-2-7.5 1-1.5 3 1 6.5 7.5 11 6.5-4.5 9-8 7.5-11-1.5-3-5-3.5-7.5-1z"/>
+        </svg>
+        <div class="stk-float" style="width:56px;bottom:-1rem;left:-1.25rem"><img src="4.png" style="width:100%;display:block"></div>
+      </div>
+      <div class="bio-text">
+        <span class="bio-tag">Well in France</span>
+        <h3 class="bio-name">Dom</h3>
+        <p>Coucou! I'm Dom, a <em>California-born francophile</em> and former tech executive turned wellness educator &amp; experience curator.</p>
+        <p>Well in France was born from my equal obsessions with the world of <em>wellness and French art de vivre</em>. Since moving to Paris in 2018, I've been on a mission to indulge in the best of French culture while leveling-up my well-being. Oui, c'est possible!</p>
+        <a class="bio-link" href="https://wellinfrance.com/" target="_blank" rel="noreferrer">wellinfrance.com</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  // capture lead-origin tag from the URL (?src=instagram, ?src=newsletter, utm_source=..., etc.)
+  var params = new URLSearchParams(window.location.search);
+  var src = params.get('src') || params.get('utm_source') || 'direct';
+  document.getElementById('wl-source').value = src;
+
+  var form = document.getElementById('wl-form');
+  var errorEl = document.getElementById('wl-error');
+  var submitBtn = document.getElementById('wl-submit');
+
+  function showError(msg){
+    errorEl.textContent = msg;
+    errorEl.style.display = 'block';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorEl.style.display = 'none';
+
+    var name = document.getElementById('wl-name').value.trim();
+    var email = document.getElementById('wl-email').value.trim();
+    var consent = document.getElementById('wl-consent').checked;
+    var honeypot = document.getElementById('wl-hp').value;
+    var interests = Array.prototype.slice.call(document.querySelectorAll('input[name="interests"]:checked')).map(function(el){ return el.value; });
+
+    if (honeypot) { return; } // silently drop bot submissions
+    if (!name) { showError('Please enter your name.'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please enter a valid email address.'); return; }
+    if (interests.length === 0) { showError('Please check at least one thing you\'re interested in.'); return; }
+    if (!consent) { showError('Please check the consent box to join the waitlist.'); return; }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Joining…';
+
+    fetch('/api/waitlist', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        source: document.getElementById('wl-source').value,
+        interests: interests,
+        consent: true
+      })
+    }).then(function(res){
+      if (!res.ok) throw new Error('bad response');
+      return res.json();
+    }).then(function(){
+      document.getElementById('wl-form-wrap').style.display = 'none';
+      document.getElementById('wl-success').style.display = 'block';
+    }).catch(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Join the waitlist';
+      showError("Something went wrong on our end — mind trying again, or emailing hello@cheyannejohnson.com directly?");
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
